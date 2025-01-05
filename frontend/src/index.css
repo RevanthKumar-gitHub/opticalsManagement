@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .form-element{
+        @apply flex flex-col gap-2;
+    }
+    .form-label{
+        @apply text-black;
+    }
+    .input-box{
+        @apply px-4 py-1 rounded-xl focus:ring-2 focus:ring-primary outline-none bg-secondary shadow-sm;
+    }
+    .btn{
+        @apply bg-primary w-full rounded-xl px-2 py-1 cursor-pointer bg-opacity-70 hover:bg-opacity-100 transition-all ease-in-out duration-200;
+    }
+}
