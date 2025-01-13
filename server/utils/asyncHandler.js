@@ -1,5 +1,5 @@
 exports.asyncHandler = (cb)=>{
     return (req,res,next)=>{
-        Promise.resolve(cb).reject(next);
+        return Promise.resolve(cb(req,res,next)).catch(next);
     }
 }
