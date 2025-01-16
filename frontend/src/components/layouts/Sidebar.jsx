@@ -1,5 +1,5 @@
 import React from "react";
-import { FaSignOutAlt } from "react-icons/fa";
+import LogoutBtn from "./LogoutBtn";
 
 const Sidebar = ({ isSidebarOpen}) => {
   return (
@@ -12,7 +12,7 @@ const Sidebar = ({ isSidebarOpen}) => {
       <div className="flex items-center md:hidden">
         <ul>
           <li className="cursor-pointer text-lg">
-            <FaSignOutAlt/>
+            <LogoutBtn/>
           </li>
         </ul>
       </div>

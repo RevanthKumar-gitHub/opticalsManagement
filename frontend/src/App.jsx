@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import ProtectedRoutes from './components/pages/ProtectedRoutes';
 import Login from './components/pages/Login';
 import PageNotFound from './components/pages/PageNotFound';
+import Notifier from './components/notifier/Notifier';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
           <Route path="*" element={<PageNotFound/>}/>
         </Route>
       </Routes>
+      <Notifier/>
     </div>
   )
 }

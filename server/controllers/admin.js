@@ -30,7 +30,7 @@ exports.loginAdminUser = asyncHandler(async (req, res, next) => {
   const { email, password } = req.body;
   if (!email || !password) {
     res.statusCode = 400;
-    throw new Error("Provide Mandatroy Fields");
+    throw new Error("Provide Mandatory Fields");
   }
   const userDetails = await adminModel.getAdminUser(email);
   if (
@@ -43,7 +43,7 @@ exports.loginAdminUser = asyncHandler(async (req, res, next) => {
       email: userDetails[0].email,
       created_at: userDetails[0].created_at,
     };
-    setCookie(payload, res, 200, "LoggedIn Successfull");
+    setCookie(payload, res, 200, "Login success");
     return;
   }
   res.statusCode = 400;

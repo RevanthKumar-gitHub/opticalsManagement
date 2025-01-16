@@ -14,7 +14,6 @@ exports.setCookie = (payload, res, statusCode, message) => {
 
   const cookieOptions = {
     httpOnly: true,
-    sameSite: "strict",
     maxAge: process.env.COOKIE_EXPIRES * 24 * 60 * 60 * 1000,
   };
 

@@ -8,7 +8,7 @@ const ProtectedRoutes = () => {
     setIsSidebarOpen(!isSidebarOpen);
   }
   return (
-    <div className='bg-black bg-opacity-5 min-h-screen'>
+    <div className='bg-black bg-opacity-10 min-h-screen'>
       <Navbar onClickMenu = {handleMenuClick} isSidebarOpen={isSidebarOpen}/>
       <Sidebar isSidebarOpen={isSidebarOpen}/>
     </div>
