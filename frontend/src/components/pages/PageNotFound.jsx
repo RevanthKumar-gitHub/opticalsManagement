@@ -9,7 +9,7 @@ const PageNotFound = () => {
         <div className="text-lg md:text-2xl bg-secondary px-4 rounded-xl">Page Not Found</div>
       </div>
       <div className="text-secondary w-full px-4 flex items-center justify-center basis-1/2 rounded-xl">
-        <Link to={"/app/"}><button className="btn w-fit px-6 text-black text-xl">Home</button></Link>
+        <Link to={"/app"}><button className="btn w-fit px-6 text-black text-xl">Home</button></Link>
       </div>
     </div>
   );

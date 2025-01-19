@@ -4,16 +4,51 @@
 @tailwind utilities;
 
 @layer components {
-    .form-element{
-        @apply flex flex-col gap-2;
+  .form-element {
+    @apply flex flex-col gap-2;
+  }
+  .form-label {
+    @apply text-black font-semibold;
+  }
+  .input-box {
+    @apply px-4 py-1 rounded-xl focus:ring-2 focus:ring-primary outline-none bg-secondary shadow-sm;
+  }
+  .btn {
+    @apply bg-primary w-full rounded-xl px-2 py-1 cursor-pointer bg-opacity-70 hover:bg-opacity-100 transition-all ease-in-out duration-200 font-semibold ;
+  }
+
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
     }
-    .form-label{
-        @apply text-black;
+    100% {
+      transform: rotate(360deg);
+      
     }
-    .input-box{
-        @apply px-4 py-1 rounded-xl focus:ring-2 focus:ring-primary outline-none bg-secondary shadow-sm;
+  }
+
+  @keyframes popper {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%) scale(0.5);
     }
-    .btn{
-        @apply bg-primary w-full rounded-xl px-2 py-1 cursor-pointer bg-opacity-70 hover:bg-opacity-100 transition-all ease-in-out duration-200;
+    50% {
+      opacity: 0.8;
+      transform: translateY(0px) scale(1);
     }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+
+  .spinner {
+    animation: spinner 1s linear infinite;
+  }
+
+  .popper {
+    animation: popper 0.6s ease-out;
+  }
+
 }
