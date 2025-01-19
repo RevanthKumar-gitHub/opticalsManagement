@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import api from "../../helpers/api";
 import { notify } from "../notifier/Notifier";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import Loader from "../layouts/Loader";
+import { login } from "../../store/slices/authSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
   const [userDetails, setUserDetails] = useState({
@@ -11,6 +13,8 @@ const Login = () => {
   });
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
     setLoading(true);
@@ -19,14 +23,19 @@ const Login = () => {
     setLoading(false);
     if (response.success) {
       notify.success(response.message);
+      dispatch(login());
       navigate("/");
       return;
     }
     notify.error(response.message);
   };
+
+  if (isAuthenticated) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <div className="flex flex-col md:flex-row  h-screen justify-center items-center gap-2 bg-black bg-opacity-5">
-      {loading && <Loader/>}
+      {loading && <Loader />}
       <div className="bg-primary p-6  flex flex-col items-center justify-center basis-1/2 rounded-b-full md:rounded-e-full md:rounded-b-none shadow-lg md:w-full">
         <div>
           <span className="text-9xl font-semibold left-4 relative">M</span>

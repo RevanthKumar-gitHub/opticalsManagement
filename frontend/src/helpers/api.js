@@ -10,6 +10,22 @@ const api = {
       return error.response.data;
     }
   },
+  logoutAdminUser : async ()=>{
+    try {
+      const response = await axios.get(apis.adminLogout);
+      return response.data;
+    } catch (error) {
+      return error.response.data;
+    }
+  },
+  fetchAdminUser : async()=>{
+    try {
+      const response = await axios.get(apis.fetchAdminUser);
+      return response.data;
+    } catch (error) {
+      return error.response.data;
+    }
+  }
 };
 
 export default api;

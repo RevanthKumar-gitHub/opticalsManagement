@@ -1,8 +1,8 @@
 const apis = {
   adminLogin: "/admin/loginAdmin",
   adminRegister: "/admin/addAdmin",
-  getAdminUser: "/admin/getAdmin",
-  logoutAdminUser: "/admin/logoutAdmin",
+  fetchAdminUser: "/admin/getAdmin",
+  adminLogout: "/admin/logoutAdmin",
 };
 
 export default apis;

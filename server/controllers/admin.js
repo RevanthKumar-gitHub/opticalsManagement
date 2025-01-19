@@ -22,6 +22,7 @@ exports.addAdminUser = asyncHandler(async (req, res, next) => {
       success: true,
       message: "Registration Successfull",
     });
+    return;
   }
   throw new Error("Registration Unsuccessfull");
 });
