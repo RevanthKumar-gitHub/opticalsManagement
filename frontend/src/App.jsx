@@ -31,7 +31,7 @@ function App() {
   }, [isAuthenticated]);
 
   return (
-    <div className="font-primary">
+    <div className="font-primary bg-black bg-opacity-10">
       {loading && <Loader />}
       <Routes>
         <Route>

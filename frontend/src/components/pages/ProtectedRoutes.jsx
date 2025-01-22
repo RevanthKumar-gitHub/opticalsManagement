@@ -17,7 +17,7 @@ const ProtectedRoutes = () => {
   }
 
   return (
-    <div className="bg-black bg-opacity-10 min-h-screen">
+    <div className="min-h-screen container">
       <Navbar onClickMenu={handleMenuClick} isSidebarOpen={isSidebarOpen} />
       <Sidebar isSidebarOpen={isSidebarOpen} />
     </div>
